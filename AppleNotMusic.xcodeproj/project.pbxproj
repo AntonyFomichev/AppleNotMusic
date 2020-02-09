@@ -24,6 +24,8 @@
 		3A778D5C23EF5BEE00AEF8FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A778D5B23EF5BEE00AEF8FC /* Assets.xcassets */; };
 		3A778D5F23EF5BEE00AEF8FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A778D5D23EF5BEE00AEF8FC /* LaunchScreen.storyboard */; };
 		3A778D6723EF5C8600AEF8FC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */; };
+		3A83142623F08DF9009F0FFD /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A83142523F08DF9009F0FFD /* TrackCell.xib */; };
+		3A83142823F08E1E009F0FFD /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83142723F08E1E009F0FFD /* TrackCell.swift */; };
 		ED0544FE4A5E25F17743089F /* libPods-AppleNotMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 310F36075E1647F5E730DC98 /* libPods-AppleNotMusic.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,8 @@
 		3A778D5E23EF5BEE00AEF8FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A778D6023EF5BEE00AEF8FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		3A83142523F08DF9009F0FFD /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		3A83142723F08E1E009F0FFD /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		94E83B9786458C03162C8C14 /* Pods-AppleNotMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.debug.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		F5C0FE3671467F20EA0EDA39 /* Pods-AppleNotMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.release.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +71,7 @@
 		3A59CB3223F05F23003B1CD7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				3A83142423F08DD2009F0FFD /* Cell */,
 				3A59CB5023F0615F003B1CD7 /* SearchViewController.storyboard */,
 				3A59CB4623F0601E003B1CD7 /* SearchViewController.swift */,
 				3A59CB4223F0601E003B1CD7 /* SearchPresenter.swift */,
@@ -123,12 +128,21 @@
 				3A778D5823EF5BED00AEF8FC /* Main.storyboard */,
 				3A778D5B23EF5BEE00AEF8FC /* Assets.xcassets */,
 				3A778D5D23EF5BEE00AEF8FC /* LaunchScreen.storyboard */,
+				3A4A4BDF23F03FEA0055757D /* SearchResponse.swift */,
 				3A59CB5423F06454003B1CD7 /* Helpers */,
 				3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */,
-				3A4A4BDF23F03FEA0055757D /* SearchResponse.swift */,
 				3A778D6023EF5BEE00AEF8FC /* Info.plist */,
 			);
 			path = AppleNotMusic;
+			sourceTree = "<group>";
+		};
+		3A83142423F08DD2009F0FFD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3A83142523F08DF9009F0FFD /* TrackCell.xib */,
+				3A83142723F08E1E009F0FFD /* TrackCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		4C2EF7CC0E541764B9D68925 /* Frameworks */ = {
@@ -208,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A778D5F23EF5BEE00AEF8FC /* LaunchScreen.storyboard in Resources */,
+				3A83142623F08DF9009F0FFD /* TrackCell.xib in Resources */,
 				3A778D5C23EF5BEE00AEF8FC /* Assets.xcassets in Resources */,
 				3A59CB5123F0615F003B1CD7 /* SearchViewController.storyboard in Resources */,
 				3A778D5A23EF5BED00AEF8FC /* Main.storyboard in Resources */,
@@ -253,6 +268,7 @@
 				3A778D5323EF5BED00AEF8FC /* AppDelegate.swift in Sources */,
 				3A778D6723EF5C8600AEF8FC /* MainTabBarController.swift in Sources */,
 				3A59CB4A23F0601E003B1CD7 /* SearchWorker.swift in Sources */,
+				3A83142823F08E1E009F0FFD /* TrackCell.swift in Sources */,
 				3A59CB4D23F0601E003B1CD7 /* SearchViewController.swift in Sources */,
 				3A59CB4B23F0601E003B1CD7 /* SearchRouter.swift in Sources */,
 				3A59CB4C23F0601E003B1CD7 /* SearchModels.swift in Sources */,
