@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UITableViewController {
+class SearchMusicViewController: UITableViewController {
   
   var networkService = NetworkService()
   private var timer: Timer?
@@ -44,7 +44,7 @@ class SearchViewController: UITableViewController {
   }
 }
 
-extension SearchViewController: UISearchBarDelegate {
+extension SearchMusicViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
       self.networkService.fetchTracks(searchText: searchText) { [weak self] (searchResults) in
