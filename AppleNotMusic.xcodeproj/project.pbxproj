@@ -28,6 +28,8 @@
 		3A83142623F08DF9009F0FFD /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A83142523F08DF9009F0FFD /* TrackCell.xib */; };
 		3A83142823F08E1E009F0FFD /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83142723F08E1E009F0FFD /* TrackCell.swift */; };
 		3AE934B723F0B96800A7CA43 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE934B623F0B96800A7CA43 /* FooterView.swift */; };
+		3AE934BA23F0C6D000A7CA43 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE934B923F0C6D000A7CA43 /* TrackDetailView.xib */; };
+		3AE934BC23F0C6DB00A7CA43 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE934BB23F0C6DB00A7CA43 /* TrackDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		3A83142523F08DF9009F0FFD /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		3A83142723F08E1E009F0FFD /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		3AE934B623F0B96800A7CA43 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		3AE934B923F0C6D000A7CA43 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
+		3AE934BB23F0C6DB00A7CA43 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		6270FB688242812E598FBE67 /* libPods-AppleNotMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppleNotMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5BDE5D47C9B46431916D207 /* Pods-AppleNotMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.release.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +77,7 @@
 		3A59CB3223F05F23003B1CD7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				3AE934B823F0C69F00A7CA43 /* TrackDetailView */,
 				3AE934B523F0B95000A7CA43 /* FooterView */,
 				3A83142423F08DD2009F0FFD /* Cell */,
 				3A59CB5023F0615F003B1CD7 /* SearchViewController.storyboard */,
@@ -156,6 +161,15 @@
 			path = FooterView;
 			sourceTree = "<group>";
 		};
+		3AE934B823F0C69F00A7CA43 /* TrackDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				3AE934B923F0C6D000A7CA43 /* TrackDetailView.xib */,
+				3AE934BB23F0C6DB00A7CA43 /* TrackDetailView.swift */,
+			);
+			path = TrackDetailView;
+			sourceTree = "<group>";
+		};
 		774C8815023A89615030F54D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A778D5F23EF5BEE00AEF8FC /* LaunchScreen.storyboard in Resources */,
+				3AE934BA23F0C6D000A7CA43 /* TrackDetailView.xib in Resources */,
 				3A83142623F08DF9009F0FFD /* TrackCell.xib in Resources */,
 				3A778D5C23EF5BEE00AEF8FC /* Assets.xcassets in Resources */,
 				3A59CB5123F0615F003B1CD7 /* SearchViewController.storyboard in Resources */,
@@ -275,6 +290,7 @@
 				3A59CB5323F0643F003B1CD7 /* UIViewController.swift in Sources */,
 				3A778D5723EF5BED00AEF8FC /* ViewController.swift in Sources */,
 				3A4A4BE023F03FEA0055757D /* SearchResponse.swift in Sources */,
+				3AE934BC23F0C6DB00A7CA43 /* TrackDetailView.swift in Sources */,
 				3AE934B723F0B96800A7CA43 /* FooterView.swift in Sources */,
 				3A59CB4E23F0601E003B1CD7 /* SearchInteractor.swift in Sources */,
 				3A778D5323EF5BED00AEF8FC /* AppDelegate.swift in Sources */,
