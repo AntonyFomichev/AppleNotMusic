@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A4A4BE023F03FEA0055757D /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4A4BDF23F03FEA0055757D /* SearchResponse.swift */; };
+		3A4A4BE223F0576F0055757D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4A4BE123F0576F0055757D /* NetworkService.swift */; };
 		3A778D5323EF5BED00AEF8FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A778D5223EF5BED00AEF8FC /* AppDelegate.swift */; };
 		3A778D5523EF5BED00AEF8FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A778D5423EF5BED00AEF8FC /* SceneDelegate.swift */; };
 		3A778D5723EF5BED00AEF8FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A778D5623EF5BED00AEF8FC /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		310F36075E1647F5E730DC98 /* libPods-AppleNotMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppleNotMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4A4BDF23F03FEA0055757D /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		3A4A4BE123F0576F0055757D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3A778D4F23EF5BED00AEF8FC /* AppleNotMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleNotMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A778D5223EF5BED00AEF8FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A778D5423EF5BED00AEF8FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				3A778D6023EF5BEE00AEF8FC /* Info.plist */,
 				3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */,
 				3A778D6823EF5EAE00AEF8FC /* SearchViewController.swift */,
+				3A4A4BE123F0576F0055757D /* NetworkService.swift */,
 				3A4A4BDF23F03FEA0055757D /* SearchResponse.swift */,
 			);
 			path = AppleNotMusic;
@@ -203,6 +206,7 @@
 				3A778D5323EF5BED00AEF8FC /* AppDelegate.swift in Sources */,
 				3A778D6723EF5C8600AEF8FC /* MainTabBarController.swift in Sources */,
 				3A778D5523EF5BED00AEF8FC /* SceneDelegate.swift in Sources */,
+				3A4A4BE223F0576F0055757D /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import Alamofire
 
 class SearchViewController: UITableViewController {
   
+  var networkService = NetworkService()
   private var timer: Timer?
   let searchController = UISearchController(searchResultsController: nil)
 
@@ -47,26 +47,9 @@ class SearchViewController: UITableViewController {
 extension SearchViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
-      let url = "https://itunes.apple.com/search"
-      let params = ["term": "\(searchText)", "limit": "10"]
-      
-      AF.request(url, method: .get, parameters: params).responseData {
-        (dataRes) in
-        if let error = dataRes.error {
-          print("\(error.localizedDescription)")
-          return
-        }
-        
-        guard let data = dataRes.data else {return }
-        
-        let decoder = JSONDecoder()
-        do {
-          let objects = try decoder.decode(SearchResponse.self, from: data)
-          self.tracks = objects.results
-          self.tableView.reloadData()
-        } catch let jsonError {
-          print(jsonError)
-        }
+      self.networkService.fetchTracks(searchText: searchText) { [weak self] (searchResults) in
+        self?.tracks = searchResults?.results ?? []
+        self?.tableView.reloadData()
       }
     })
   }
