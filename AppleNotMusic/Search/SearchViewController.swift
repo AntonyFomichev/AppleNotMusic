@@ -22,6 +22,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
   let searchController = UISearchController(searchResultsController: nil)
   private var searchViewModel = SearchViewModel.init(cells: [])
   private var timer: Timer?
+  private lazy var footerView = FooterView()
   
   // MARK: Setup
   
@@ -36,10 +37,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     presenter.viewController  = viewController
     router.viewController     = viewController
   }
-  
-  // MARK: Routing
-  
-  
   
   // MARK: View lifecycle
   
@@ -59,6 +56,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
   
   private func setupTableView() {
     table.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+    table.tableFooterView = footerView
     let nib = UINib(nibName: "TrackCell", bundle: nil)
     table.register(nib, forCellReuseIdentifier: TrackCell.reuseId)
   }
@@ -68,6 +66,9 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     case .displayTracks(let searchViewModel):
       self.searchViewModel = searchViewModel
       table.reloadData()
+      footerView.hideLoader()
+    case .displayFooterView:
+      footerView.showLoader()
     }
   }
   
@@ -93,6 +94,19 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 84
+  }
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let label = UILabel()
+    label.text = "This search is empty 🤷"
+    label.textAlignment = .center
+    label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+    return label
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return searchViewModel.cells.count > 0 ? 0 : 40
+    
   }
 }
 

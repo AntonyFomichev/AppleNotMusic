@@ -27,6 +27,7 @@
 		3A778D6723EF5C8600AEF8FC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */; };
 		3A83142623F08DF9009F0FFD /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A83142523F08DF9009F0FFD /* TrackCell.xib */; };
 		3A83142823F08E1E009F0FFD /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83142723F08E1E009F0FFD /* TrackCell.swift */; };
+		3AE934B723F0B96800A7CA43 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE934B623F0B96800A7CA43 /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3A83142523F08DF9009F0FFD /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		3A83142723F08E1E009F0FFD /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		3AE934B623F0B96800A7CA43 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		6270FB688242812E598FBE67 /* libPods-AppleNotMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppleNotMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5BDE5D47C9B46431916D207 /* Pods-AppleNotMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.release.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 		3A59CB3223F05F23003B1CD7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				3AE934B523F0B95000A7CA43 /* FooterView */,
 				3A83142423F08DD2009F0FFD /* Cell */,
 				3A59CB5023F0615F003B1CD7 /* SearchViewController.storyboard */,
 				3A59CB4623F0601E003B1CD7 /* SearchViewController.swift */,
@@ -143,6 +146,14 @@
 				3A83142723F08E1E009F0FFD /* TrackCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		3AE934B523F0B95000A7CA43 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				3AE934B623F0B96800A7CA43 /* FooterView.swift */,
+			);
+			path = FooterView;
 			sourceTree = "<group>";
 		};
 		774C8815023A89615030F54D /* Pods */ = {
@@ -264,6 +275,7 @@
 				3A59CB5323F0643F003B1CD7 /* UIViewController.swift in Sources */,
 				3A778D5723EF5BED00AEF8FC /* ViewController.swift in Sources */,
 				3A4A4BE023F03FEA0055757D /* SearchResponse.swift in Sources */,
+				3AE934B723F0B96800A7CA43 /* FooterView.swift in Sources */,
 				3A59CB4E23F0601E003B1CD7 /* SearchInteractor.swift in Sources */,
 				3A778D5323EF5BED00AEF8FC /* AppDelegate.swift in Sources */,
 				3A778D6723EF5C8600AEF8FC /* MainTabBarController.swift in Sources */,
