@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00363FA50620598483CCEEC1 /* libPods-AppleNotMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6270FB688242812E598FBE67 /* libPods-AppleNotMusic.a */; };
 		3A4A4BE023F03FEA0055757D /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4A4BDF23F03FEA0055757D /* SearchResponse.swift */; };
 		3A4A4BE223F0576F0055757D /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4A4BE123F0576F0055757D /* NetworkService.swift */; };
 		3A59CB4923F0601E003B1CD7 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59CB4223F0601E003B1CD7 /* SearchPresenter.swift */; };
@@ -26,11 +27,10 @@
 		3A778D6723EF5C8600AEF8FC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */; };
 		3A83142623F08DF9009F0FFD /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A83142523F08DF9009F0FFD /* TrackCell.xib */; };
 		3A83142823F08E1E009F0FFD /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83142723F08E1E009F0FFD /* TrackCell.swift */; };
-		ED0544FE4A5E25F17743089F /* libPods-AppleNotMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 310F36075E1647F5E730DC98 /* libPods-AppleNotMusic.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		310F36075E1647F5E730DC98 /* libPods-AppleNotMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppleNotMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		178EAB5197DBE62A12F002C5 /* Pods-AppleNotMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.debug.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		3A4A4BDF23F03FEA0055757D /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		3A4A4BE123F0576F0055757D /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		3A59CB4223F0601E003B1CD7 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -52,8 +52,8 @@
 		3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3A83142523F08DF9009F0FFD /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		3A83142723F08E1E009F0FFD /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
-		94E83B9786458C03162C8C14 /* Pods-AppleNotMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.debug.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.debug.xcconfig"; sourceTree = "<group>"; };
-		F5C0FE3671467F20EA0EDA39 /* Pods-AppleNotMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.release.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.release.xcconfig"; sourceTree = "<group>"; };
+		6270FB688242812E598FBE67 /* libPods-AppleNotMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppleNotMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5BDE5D47C9B46431916D207 /* Pods-AppleNotMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.release.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED0544FE4A5E25F17743089F /* libPods-AppleNotMusic.a in Frameworks */,
+				00363FA50620598483CCEEC1 /* libPods-AppleNotMusic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +105,7 @@
 				3A778D5123EF5BED00AEF8FC /* AppleNotMusic */,
 				3A778D5023EF5BED00AEF8FC /* Products */,
 				774C8815023A89615030F54D /* Pods */,
-				4C2EF7CC0E541764B9D68925 /* Frameworks */,
+				E7E851DAE07D8A8B8BE0C008 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,21 +145,21 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		4C2EF7CC0E541764B9D68925 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				310F36075E1647F5E730DC98 /* libPods-AppleNotMusic.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		774C8815023A89615030F54D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				94E83B9786458C03162C8C14 /* Pods-AppleNotMusic.debug.xcconfig */,
-				F5C0FE3671467F20EA0EDA39 /* Pods-AppleNotMusic.release.xcconfig */,
+				178EAB5197DBE62A12F002C5 /* Pods-AppleNotMusic.debug.xcconfig */,
+				D5BDE5D47C9B46431916D207 /* Pods-AppleNotMusic.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E7E851DAE07D8A8B8BE0C008 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6270FB688242812E598FBE67 /* libPods-AppleNotMusic.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +169,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A778D6323EF5BEE00AEF8FC /* Build configuration list for PBXNativeTarget "AppleNotMusic" */;
 			buildPhases = (
-				0E44567079C81845C0C68075 /* [CP] Check Pods Manifest.lock */,
+				2645A83CF210AB7D1A285F9B /* [CP] Check Pods Manifest.lock */,
 				3A778D4B23EF5BED00AEF8FC /* Sources */,
 				3A778D4C23EF5BED00AEF8FC /* Frameworks */,
 				3A778D4D23EF5BED00AEF8FC /* Resources */,
@@ -232,7 +232,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E44567079C81845C0C68075 /* [CP] Check Pods Manifest.lock */ = {
+		2645A83CF210AB7D1A285F9B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -416,7 +416,7 @@
 		};
 		3A778D6423EF5BEE00AEF8FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94E83B9786458C03162C8C14 /* Pods-AppleNotMusic.debug.xcconfig */;
+			baseConfigurationReference = 178EAB5197DBE62A12F002C5 /* Pods-AppleNotMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -435,7 +435,7 @@
 		};
 		3A778D6523EF5BEE00AEF8FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5C0FE3671467F20EA0EDA39 /* Pods-AppleNotMusic.release.xcconfig */;
+			baseConfigurationReference = D5BDE5D47C9B46431916D207 /* Pods-AppleNotMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

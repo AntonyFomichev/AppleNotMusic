@@ -7,5 +7,6 @@ target 'AppleNotMusic' do
   # Pods for AppleNotMusic
 
 pod 'Alamofire', '~> 5.0.0-rc.3'
+pod 'SDWebImage', :modular_headers => true
 
 end
