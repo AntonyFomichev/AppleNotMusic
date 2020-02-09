@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 struct TrackModel {
   var trackName: String
@@ -15,7 +16,7 @@ struct TrackModel {
 
 class SearchViewController: UITableViewController {
   let searchController = UISearchController(searchResultsController: nil)
-  
+
   let tracks = [TrackModel(trackName: "Bad Guy", artistName: "Billie Eilish"), TrackModel(trackName: "Нужен Xanax", artistName: "Паша Техник")]
   
   override func viewDidLoad() {
@@ -48,6 +49,18 @@ class SearchViewController: UITableViewController {
 
 extension SearchViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-      print(searchText)
+    let req = searchText.replacingOccurrences(of: " ", with: "%20")
+    let url = "https://itunes.apple.com/search?term=\(req)"
+    AF.request(url).responseData { (dataRes) in
+      if let error = dataRes.error {
+        print("\(error.localizedDescription)")
+        return
+      }
+      
+      guard let data = dataRes.data else {return }
+      let someString = String(data: data ,encoding: .utf8)
+      
+      print(someString ?? "")
+    }
   }
 }

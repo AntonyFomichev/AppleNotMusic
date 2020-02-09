@@ -1,0 +1,6 @@
+module Pods_AppleNotMusic {
+  umbrella header "Pods-AppleNotMusic-umbrella.h"
+
+  export *
+  module * { export * }
+}
