@@ -24,7 +24,6 @@
 		3A778D5C23EF5BEE00AEF8FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A778D5B23EF5BEE00AEF8FC /* Assets.xcassets */; };
 		3A778D5F23EF5BEE00AEF8FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A778D5D23EF5BEE00AEF8FC /* LaunchScreen.storyboard */; };
 		3A778D6723EF5C8600AEF8FC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */; };
-		3A778D6923EF5EAE00AEF8FC /* SearchMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A778D6823EF5EAE00AEF8FC /* SearchMusicViewController.swift */; };
 		ED0544FE4A5E25F17743089F /* libPods-AppleNotMusic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 310F36075E1647F5E730DC98 /* libPods-AppleNotMusic.a */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +48,6 @@
 		3A778D5E23EF5BEE00AEF8FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A778D6023EF5BEE00AEF8FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		3A778D6823EF5EAE00AEF8FC /* SearchMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicViewController.swift; sourceTree = "<group>"; };
 		94E83B9786458C03162C8C14 /* Pods-AppleNotMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.debug.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.debug.xcconfig"; sourceTree = "<group>"; };
 		F5C0FE3671467F20EA0EDA39 /* Pods-AppleNotMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.release.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,7 +125,6 @@
 				3A778D5D23EF5BEE00AEF8FC /* LaunchScreen.storyboard */,
 				3A59CB5423F06454003B1CD7 /* Helpers */,
 				3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */,
-				3A778D6823EF5EAE00AEF8FC /* SearchMusicViewController.swift */,
 				3A4A4BDF23F03FEA0055757D /* SearchResponse.swift */,
 				3A778D6023EF5BEE00AEF8FC /* Info.plist */,
 			);
@@ -250,7 +247,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A59CB5323F0643F003B1CD7 /* UIViewController.swift in Sources */,
-				3A778D6923EF5EAE00AEF8FC /* SearchMusicViewController.swift in Sources */,
 				3A778D5723EF5BED00AEF8FC /* ViewController.swift in Sources */,
 				3A4A4BE023F03FEA0055757D /* SearchResponse.swift in Sources */,
 				3A59CB4E23F0601E003B1CD7 /* SearchInteractor.swift in Sources */,
