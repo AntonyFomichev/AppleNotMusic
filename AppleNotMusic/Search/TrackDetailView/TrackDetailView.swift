@@ -32,6 +32,7 @@ class TrackDetailView:UIView {
   }()
   
   weak var delegate: TrackMovingDelegate?
+  weak var tabBarDelegate: MainTabBarControllerDelegate?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -108,7 +109,7 @@ class TrackDetailView:UIView {
   //MARK: - @IBActions
   
   @IBAction func dragDownButtonTapped(_ sender: Any) {
-    self.removeFromSuperview()
+    self.tabBarDelegate?.minimizeTrackDetailController()
   }
   
   @IBAction func handleCurrentTimeSlider(_ sender: Any) {
