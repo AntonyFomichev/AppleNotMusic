@@ -41,6 +41,7 @@ class TrackDetailView:UIView {
     authorTitleLabel.text = viewModel.artistName
     playTrack(preview: viewModel.previewUrl)
     monitorStartTime()
+    observeLayerCurrentTime()
     
     let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
     guard let url = URL(string: string600 ?? "") else { return }
@@ -63,6 +64,16 @@ class TrackDetailView:UIView {
     let times = [NSValue(time: time)]
     player.addBoundaryTimeObserver(forTimes: times, queue: .main) { [weak self] in
       self?.enlargeImageView()
+    }
+  }
+  
+  private func observeLayerCurrentTime() {
+    let time = CMTimeMake(value: 1, timescale: 2)
+    player.addPeriodicTimeObserver(forInterval: time, queue: .main) { [weak self] (time) in
+      self?.currentTimeLabel.text = time.toString()
+      let durationTime = self?.player.currentItem?.duration
+      let currentDurationTimeText = ((durationTime ?? CMTimeMake(value: 1, timescale: 1)) - time).toString()
+      self?.durationLabel.text = currentDurationTimeText
     }
   }
   

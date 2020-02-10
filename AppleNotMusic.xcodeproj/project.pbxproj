@@ -30,6 +30,7 @@
 		3AE934B723F0B96800A7CA43 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE934B623F0B96800A7CA43 /* FooterView.swift */; };
 		3AE934BA23F0C6D000A7CA43 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE934B923F0C6D000A7CA43 /* TrackDetailView.xib */; };
 		3AE934BC23F0C6DB00A7CA43 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE934BB23F0C6DB00A7CA43 /* TrackDetailView.swift */; };
+		3AE934BE23F13A2600A7CA43 /* CMTimeExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE934BD23F13A2600A7CA43 /* CMTimeExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		3AE934B623F0B96800A7CA43 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		3AE934B923F0C6D000A7CA43 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 		3AE934BB23F0C6DB00A7CA43 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
+		3AE934BD23F13A2600A7CA43 /* CMTimeExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMTimeExt.swift; sourceTree = "<group>"; };
 		6270FB688242812E598FBE67 /* libPods-AppleNotMusic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppleNotMusic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5BDE5D47C9B46431916D207 /* Pods-AppleNotMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleNotMusic.release.xcconfig"; path = "Target Support Files/Pods-AppleNotMusic/Pods-AppleNotMusic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				3A59CB5223F0643F003B1CD7 /* UIViewController.swift */,
+				3AE934BD23F13A2600A7CA43 /* CMTimeExt.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				3A59CB4D23F0601E003B1CD7 /* SearchViewController.swift in Sources */,
 				3A59CB4B23F0601E003B1CD7 /* SearchRouter.swift in Sources */,
 				3A59CB4C23F0601E003B1CD7 /* SearchModels.swift in Sources */,
+				3AE934BE23F13A2600A7CA43 /* CMTimeExt.swift in Sources */,
 				3A778D5523EF5BED00AEF8FC /* SceneDelegate.swift in Sources */,
 				3A59CB4923F0601E003B1CD7 /* SearchPresenter.swift in Sources */,
 				3A4A4BE223F0576F0055757D /* NetworkService.swift in Sources */,
