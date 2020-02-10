@@ -74,7 +74,15 @@ class TrackDetailView:UIView {
       let durationTime = self?.player.currentItem?.duration
       let currentDurationTimeText = ((durationTime ?? CMTimeMake(value: 1, timescale: 1)) - time).toString()
       self?.durationLabel.text = currentDurationTimeText
+      self?.updateCurrentTimeSlider()
     }
+  }
+  
+  private func updateCurrentTimeSlider() {
+    let currentTimeSeconds = CMTimeGetSeconds(player.currentTime())
+    let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
+    let percentage = currentTimeSeconds / durationSeconds
+    self.currentTimeSlider.value = Float(percentage)
   }
   
   private func enlargeImageView() {
@@ -97,9 +105,16 @@ class TrackDetailView:UIView {
   }
   
   @IBAction func handleCurrentTimeSlider(_ sender: Any) {
+    let percentage = currentTimeSlider.value
+    guard let duration = player.currentItem?.duration else { return }
+    let durationInSeconds = CMTimeGetSeconds(duration)
+    let seekTimeInSeconds = Float64(percentage) * durationInSeconds
+    let seekTime = CMTimeMakeWithSeconds(seekTimeInSeconds, preferredTimescale: 1)
+    player.seek(to: seekTime)
   }
   
   @IBAction func handleVolumeSlider(_ sender: Any) {
+    player.volume = volumeSlider.value
   }
   
   @IBAction func previousTrack(_ sender: Any) {

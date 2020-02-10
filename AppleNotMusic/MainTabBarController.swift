@@ -16,6 +16,7 @@ class MainTabBarController: UITabBarController {
     let searchVC: SearchViewController = SearchViewController.loadFromStoryboard()
     let libraryVC = ViewController()
     
+    
     viewControllers = [
       generateViewController(rootViewController: libraryVC, image: #imageLiteral(resourceName: "ios10-apple-music-library-5nav-icon-1"), title: "Library"),
       generateViewController(rootViewController: searchVC, image: #imageLiteral(resourceName: "ios10-apple-music-search-5nav-icon-1"), title: "Search")
