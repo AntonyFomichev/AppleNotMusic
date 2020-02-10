@@ -10,6 +10,11 @@ import UIKit
 import AVKit
 import SDWebImage
 
+protocol TrackMovingDelegate: class {
+  func moveBackForPreviousTrack() -> SearchViewModel.Cell?
+  func moveForwardForNextTrack() -> SearchViewModel.Cell?
+}
+
 class TrackDetailView:UIView {
   @IBOutlet weak var trackImageView: UIImageView!
   @IBOutlet weak var currentTimeSlider: UISlider!
@@ -25,6 +30,8 @@ class TrackDetailView:UIView {
     avPlayer.automaticallyWaitsToMinimizeStalling = false
     return avPlayer
   }()
+  
+  weak var delegate: TrackMovingDelegate?
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -118,9 +125,13 @@ class TrackDetailView:UIView {
   }
   
   @IBAction func previousTrack(_ sender: Any) {
+    guard let cellViewModel = delegate?.moveBackForPreviousTrack() else { return }
+    self.set(viewModel: cellViewModel)
   }
   
   @IBAction func nextTrack(_ sender: Any) {
+    guard let cellViewModel = delegate?.moveForwardForNextTrack() else { return }
+    self.set(viewModel: cellViewModel)
   }
   
   @IBAction func playPauseAction(_ sender: Any) {
@@ -131,6 +142,7 @@ class TrackDetailView:UIView {
     } else {
       player.pause()
       playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+      reduceImageView()
     }
   }
   
