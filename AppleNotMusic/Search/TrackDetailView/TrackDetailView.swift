@@ -185,6 +185,10 @@ class TrackDetailView:UIView {
     let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
     let percentage = currentTimeSeconds / durationSeconds
     self.currentTimeSlider.value = Float(percentage)
+    
+    if durationSeconds == currentTimeSeconds {
+      moveNextTrack()
+    }
   }
   
   private func enlargeImageView() {
@@ -225,11 +229,17 @@ class TrackDetailView:UIView {
     self.set(viewModel: cellInfo)
   }
   
-  @IBAction func nextTrack(_ sender: Any) {
+  func moveNextTrack() {
     let cellViewModel = delegate?.moveForwardForNextTrack()
     guard let cellInfo = cellViewModel else { return }
     self.set(viewModel: cellInfo)
   }
+  
+  @IBAction func nextTrack(_ sender: Any) {
+    moveNextTrack()
+  }
+  
+
   
   @IBAction func playPauseAction(_ sender: Any) {
     if (player.timeControlStatus == .paused) {
