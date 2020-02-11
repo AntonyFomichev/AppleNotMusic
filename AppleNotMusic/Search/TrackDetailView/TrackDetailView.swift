@@ -56,18 +56,18 @@ class TrackDetailView:UIView {
   }
   
   func set(viewModel: SearchViewModel.Cell) {
-      miniTrackTitleLabel.text = viewModel.trackName
-      trackTitleLabel.text = viewModel.trackName
-      authorTitleLabel.text = viewModel.artistName
-      playTrack(preview: viewModel.previewUrl)
-      monitorStartTime()
-      observeLayerCurrentTime()
-      playPauseButton.setImage(#imageLiteral(resourceName: "Pause-1"), for: .normal)
-      miniPlayPauseButton.setImage(#imageLiteral(resourceName: "Pause-1"), for: .normal)
-      let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
-      guard let url = URL(string: string600 ?? "") else { return }
-      miniTrackImageView.sd_setImage(with: url, completed: nil)
-      trackImageView.sd_setImage(with: url, completed: nil)
+    miniTrackTitleLabel.text = viewModel.trackName
+    trackTitleLabel.text = viewModel.trackName
+    authorTitleLabel.text = viewModel.artistName
+    playTrack(preview: viewModel.previewUrl)
+    monitorStartTime()
+    observeLayerCurrentTime()
+    playPauseButton.setImage(#imageLiteral(resourceName: "Pause-1"), for: .normal)
+    miniPlayPauseButton.setImage(#imageLiteral(resourceName: "Pause-1"), for: .normal)
+    let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
+    guard let url = URL(string: string600 ?? "") else { return }
+    miniTrackImageView.sd_setImage(with: url, completed: nil)
+    trackImageView.sd_setImage(with: url, completed: nil)
   }
   
   private func setupGestures() {
@@ -87,8 +87,16 @@ class TrackDetailView:UIView {
       handlePanChange(gesture: gesture)
     case .ended:
       handlePanEnded(gesture: gesture)
+    case .possible:
+      print("")
+    case .cancelled:
+      print("")
+      
+    case .failed:
+      print("")
+      
     @unknown default:
-      <#code#>
+      print("unknown")
     }
   }
   
@@ -184,9 +192,9 @@ class TrackDetailView:UIView {
   }
   
   @IBAction func previousTrack(_ sender: Any) {
-      let cellViewModel = delegate?.moveBackForPreviousTrack()
-      guard let cellInfo = cellViewModel else { return }
-      self.set(viewModel: cellInfo)
+    let cellViewModel = delegate?.moveBackForPreviousTrack()
+    guard let cellInfo = cellViewModel else { return }
+    self.set(viewModel: cellInfo)
   }
   
   @IBAction func nextTrack(_ sender: Any) {
