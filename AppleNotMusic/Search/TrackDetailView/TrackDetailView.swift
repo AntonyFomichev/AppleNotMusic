@@ -83,7 +83,7 @@ class TrackDetailView:UIView {
   @objc private func handlePan(gesture: UIPanGestureRecognizer) {
     switch gesture.state {
     case .began:
-      print("began")
+      print("")
     case .changed:
       handlePanChange(gesture: gesture)
     case .ended:

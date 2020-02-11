@@ -28,6 +28,7 @@
 		3A83142623F08DF9009F0FFD /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A83142523F08DF9009F0FFD /* TrackCell.xib */; };
 		3A83142823F08E1E009F0FFD /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83142723F08E1E009F0FFD /* TrackCell.swift */; };
 		3AB8434823F197EC00143620 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8434723F197EC00143620 /* Nib.swift */; };
+		3AB8434A23F3054700143620 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8434923F3054700143620 /* Library.swift */; };
 		3AE934B723F0B96800A7CA43 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE934B623F0B96800A7CA43 /* FooterView.swift */; };
 		3AE934BA23F0C6D000A7CA43 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AE934B923F0C6D000A7CA43 /* TrackDetailView.xib */; };
 		3AE934BC23F0C6DB00A7CA43 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE934BB23F0C6DB00A7CA43 /* TrackDetailView.swift */; };
@@ -58,6 +59,7 @@
 		3A83142523F08DF9009F0FFD /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		3A83142723F08E1E009F0FFD /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		3AB8434723F197EC00143620 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
+		3AB8434923F3054700143620 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		3AE934B623F0B96800A7CA43 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		3AE934B923F0C6D000A7CA43 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 		3AE934BB23F0C6DB00A7CA43 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				3A778D5B23EF5BEE00AEF8FC /* Assets.xcassets */,
 				3A778D5D23EF5BEE00AEF8FC /* LaunchScreen.storyboard */,
 				3A4A4BDF23F03FEA0055757D /* SearchResponse.swift */,
+				3AB8434923F3054700143620 /* Library.swift */,
 				3A59CB5423F06454003B1CD7 /* Helpers */,
 				3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */,
 				3A778D6023EF5BEE00AEF8FC /* Info.plist */,
@@ -299,6 +302,7 @@
 				3AE934BC23F0C6DB00A7CA43 /* TrackDetailView.swift in Sources */,
 				3AE934B723F0B96800A7CA43 /* FooterView.swift in Sources */,
 				3A59CB4E23F0601E003B1CD7 /* SearchInteractor.swift in Sources */,
+				3AB8434A23F3054700143620 /* Library.swift in Sources */,
 				3A778D5323EF5BED00AEF8FC /* AppDelegate.swift in Sources */,
 				3AB8434823F197EC00143620 /* Nib.swift in Sources */,
 				3A778D6723EF5C8600AEF8FC /* MainTabBarController.swift in Sources */,
