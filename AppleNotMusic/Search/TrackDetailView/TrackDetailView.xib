@@ -13,6 +13,65 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlw-2Q-Z6u">
+                    <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SxN-dq-KHb">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                            <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SEI-KZ-TEU">
+                            <rect key="frame" x="8" y="8" width="398" height="48"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="DEZ-f8-IbM">
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="Kms-F6-ay3"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOw-V5-qUA">
+                                    <rect key="frame" x="64" y="0.0" width="210" height="48"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ust-WN-3d9">
+                                    <rect key="frame" x="290" y="0.0" width="44" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="zMv-9a-02p"/>
+                                    </constraints>
+                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="Pause-1"/>
+                                    <connections>
+                                        <action selector="playPauseAction:" destination="QZ4-XG-hQe" eventType="touchUpInside" id="cEv-qV-aW7"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UY-pI-Y9J">
+                                    <rect key="frame" x="350" y="0.0" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="JAu-Cr-LIR"/>
+                                    </constraints>
+                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="Right-1"/>
+                                    <connections>
+                                        <action selector="nextTrack:" destination="QZ4-XG-hQe" eventType="touchUpInside" id="qTG-X4-Gmi"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="SxN-dq-KHb" firstAttribute="leading" secondItem="hlw-2Q-Z6u" secondAttribute="leading" id="1fZ-HF-Hea"/>
+                        <constraint firstItem="SEI-KZ-TEU" firstAttribute="top" secondItem="hlw-2Q-Z6u" secondAttribute="top" constant="8" id="C95-Te-s7W"/>
+                        <constraint firstAttribute="bottom" secondItem="SEI-KZ-TEU" secondAttribute="bottom" constant="8" id="Lm2-iu-8Pq"/>
+                        <constraint firstItem="SEI-KZ-TEU" firstAttribute="leading" secondItem="hlw-2Q-Z6u" secondAttribute="leading" constant="8" id="Uj2-50-PdV"/>
+                        <constraint firstItem="SEI-KZ-TEU" firstAttribute="top" secondItem="SxN-dq-KHb" secondAttribute="bottom" constant="7" id="bPm-R4-h9q"/>
+                        <constraint firstItem="SxN-dq-KHb" firstAttribute="centerX" secondItem="SEI-KZ-TEU" secondAttribute="centerX" id="jt5-Ax-P0v"/>
+                        <constraint firstAttribute="trailing" secondItem="SEI-KZ-TEU" secondAttribute="trailing" constant="8" id="l18-Sg-jGG"/>
+                        <constraint firstAttribute="height" constant="64" id="leh-Ip-5Pf"/>
+                        <constraint firstItem="SxN-dq-KHb" firstAttribute="top" secondItem="hlw-2Q-Z6u" secondAttribute="top" id="xKK-wl-fDj"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="64D-bj-zKU">
                     <rect key="frame" x="30" y="44" width="354" height="788"/>
                     <subviews>
@@ -82,8 +141,8 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOZ-18-UCI">
                                     <rect key="frame" x="0.0" y="99" width="118" height="20"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="Left">
+                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="Left-1">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
                                     <connections>
@@ -91,9 +150,9 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WST-wi-iH0">
-                                    <rect key="frame" x="118" y="80.333333333333258" width="118" height="57"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="pause">
+                                    <rect key="frame" x="118" y="82" width="118" height="54"/>
+                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="Pause-1">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
                                     <connections>
@@ -102,8 +161,8 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZI-2x-k2C">
                                     <rect key="frame" x="236" y="99" width="118" height="20"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="Right">
+                                    <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="Right-1">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
                                     <connections>
@@ -142,9 +201,12 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="hlw-2Q-Z6u" firstAttribute="top" secondItem="fTo-9F-ugC" secondAttribute="top" id="MQL-uJ-12P"/>
                 <constraint firstItem="64D-bj-zKU" firstAttribute="top" secondItem="fTo-9F-ugC" secondAttribute="top" id="QUF-6C-9PN"/>
                 <constraint firstItem="fTo-9F-ugC" firstAttribute="trailing" secondItem="64D-bj-zKU" secondAttribute="trailing" constant="30" id="Rja-Qv-u1f"/>
                 <constraint firstItem="fTo-9F-ugC" firstAttribute="bottom" secondItem="64D-bj-zKU" secondAttribute="bottom" constant="30" id="RnV-Gx-ASv"/>
+                <constraint firstItem="hlw-2Q-Z6u" firstAttribute="leading" secondItem="fTo-9F-ugC" secondAttribute="leading" id="doM-FP-1vh"/>
+                <constraint firstItem="fTo-9F-ugC" firstAttribute="trailing" secondItem="hlw-2Q-Z6u" secondAttribute="trailing" id="flw-Hs-YZM"/>
                 <constraint firstItem="64D-bj-zKU" firstAttribute="leading" secondItem="fTo-9F-ugC" secondAttribute="leading" constant="30" id="nF8-9C-tM2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fTo-9F-ugC"/>
@@ -153,20 +215,27 @@
                 <outlet property="currentTimeLabel" destination="AmD-5h-91m" id="TqD-9h-x6V"/>
                 <outlet property="currentTimeSlider" destination="zkr-Tm-Uic" id="Poj-Yr-XDb"/>
                 <outlet property="durationLabel" destination="e4z-j5-dPb" id="fXS-u1-VjP"/>
+                <outlet property="maximizedStackView" destination="64D-bj-zKU" id="E3l-vs-lNF"/>
+                <outlet property="miniGoForwardButton" destination="7UY-pI-Y9J" id="dZJ-Uv-BBy"/>
+                <outlet property="miniPlayPauseButton" destination="Ust-WN-3d9" id="Vmj-oE-zZ3"/>
+                <outlet property="miniTrackImageView" destination="DEZ-f8-IbM" id="r2Y-wD-VwL"/>
+                <outlet property="miniTrackTitleLabel" destination="IOw-V5-qUA" id="BCl-FP-STP"/>
+                <outlet property="miniTrackView" destination="hlw-2Q-Z6u" id="nZ1-Vf-Mlh"/>
                 <outlet property="playPauseButton" destination="WST-wi-iH0" id="ImB-UI-Ibe"/>
                 <outlet property="trackImageView" destination="6tp-3t-DyD" id="69A-4i-8gd"/>
                 <outlet property="trackTitleLabel" destination="aAn-LA-vUE" id="jhS-aa-uUb"/>
                 <outlet property="volumeSlider" destination="UKh-T9-GgF" id="Xio-ew-mN9"/>
             </connections>
-            <point key="canvasLocation" x="190" y="78"/>
+            <point key="canvasLocation" x="189.85507246376812" y="77.678571428571431"/>
         </view>
     </objects>
     <resources>
         <image name="Drag Down" width="37" height="12"/>
         <image name="Icon Min" width="7" height="12"/>
         <image name="IconMax" width="17" height="17"/>
-        <image name="Left" width="34" height="20"/>
-        <image name="Right" width="34" height="20"/>
-        <image name="pause" width="57" height="57"/>
+        <image name="Image" width="54.333332061767578" height="54.333332061767578"/>
+        <image name="Left-1" width="34" height="20"/>
+        <image name="Pause-1" width="42" height="54"/>
+        <image name="Right-1" width="34" height="20"/>
     </resources>
 </document>

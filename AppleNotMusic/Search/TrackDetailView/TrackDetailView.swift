@@ -16,6 +16,13 @@ protocol TrackMovingDelegate: class {
 }
 
 class TrackDetailView:UIView {
+  @IBOutlet weak var miniTrackView: UIView!
+  @IBOutlet weak var miniGoForwardButton: UIButton!
+  @IBOutlet weak var miniTrackImageView: UIImageView!
+  @IBOutlet weak var miniTrackTitleLabel: UILabel!
+  @IBOutlet weak var miniPlayPauseButton: UIButton!
+  
+  @IBOutlet weak var maximizedStackView: UIStackView!
   @IBOutlet weak var trackImageView: UIImageView!
   @IBOutlet weak var currentTimeSlider: UISlider!
   @IBOutlet weak var currentTimeLabel: UILabel!
@@ -45,24 +52,27 @@ class TrackDetailView:UIView {
   }
   
   func set(viewModel: SearchViewModel.Cell) {
-    trackTitleLabel.text = viewModel.trackName
-    authorTitleLabel.text = viewModel.artistName
-    playTrack(preview: viewModel.previewUrl)
-    monitorStartTime()
-    observeLayerCurrentTime()
-    
-    let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
-    guard let url = URL(string: string600 ?? "") else { return }
-    trackImageView!.sd_setImage(with: url, completed: nil)
+      miniTrackTitleLabel.text = viewModel.trackName
+      trackTitleLabel.text = viewModel.trackName
+      authorTitleLabel.text = viewModel.artistName
+      playTrack(preview: viewModel.previewUrl)
+      monitorStartTime()
+      observeLayerCurrentTime()
+      playPauseButton.setImage(#imageLiteral(resourceName: "Pause-1"), for: .normal)
+      miniPlayPauseButton.setImage(#imageLiteral(resourceName: "Pause-1"), for: .normal)
+      let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
+      guard let url = URL(string: string600 ?? "") else { return }
+      miniTrackImageView.sd_setImage(with: url, completed: nil)
+      trackImageView.sd_setImage(with: url, completed: nil)
   }
   
   private func playTrack(preview: String?) {
-    print("")
-    
     guard let url = URL(string: preview ?? "") else { return }
     let playerItem = AVPlayerItem(url: url)
     player.replaceCurrentItem(with: playerItem)
     player.play()
+    
+    print(player.timeControlStatus == AVPlayer.TimeControlStatus.playing)
   }
   
   //MARK: - Animations
@@ -126,23 +136,27 @@ class TrackDetailView:UIView {
   }
   
   @IBAction func previousTrack(_ sender: Any) {
-    guard let cellViewModel = delegate?.moveBackForPreviousTrack() else { return }
-    self.set(viewModel: cellViewModel)
+      let cellViewModel = delegate?.moveBackForPreviousTrack()
+      guard let cellInfo = cellViewModel else { return }
+      self.set(viewModel: cellInfo)
   }
   
   @IBAction func nextTrack(_ sender: Any) {
-    guard let cellViewModel = delegate?.moveForwardForNextTrack() else { return }
-    self.set(viewModel: cellViewModel)
+    let cellViewModel = delegate?.moveForwardForNextTrack()
+    guard let cellInfo = cellViewModel else { return }
+    self.set(viewModel: cellInfo)
   }
   
   @IBAction func playPauseAction(_ sender: Any) {
     if (player.timeControlStatus == .paused) {
       player.play()
-      playPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+      playPauseButton.setImage(#imageLiteral(resourceName: "Pause-1"), for: .normal)
+      miniPlayPauseButton.setImage(#imageLiteral(resourceName: "Pause-1"), for: .normal)
       enlargeImageView()
     } else {
       player.pause()
-      playPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+      playPauseButton.setImage(#imageLiteral(resourceName: "play-1"), for: .normal)
+      miniPlayPauseButton.setImage(#imageLiteral(resourceName: "play-1"), for: .normal)
       reduceImageView()
     }
   }

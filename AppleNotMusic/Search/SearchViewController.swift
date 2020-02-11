@@ -3,7 +3,7 @@
 //  AppleNotMusic
 //
 //  Created by Антон on 09.02.2020.
-//  Copyright (c) 2020 Tony Blaire. All rights reserved.
+//  Copyright © 2020 Tony Blaire. All rights reserved.
 //
 
 import UIKit
@@ -17,14 +17,16 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
   var interactor: SearchBusinessLogic?
   var router: (NSObjectProtocol & SearchRoutingLogic)?
   
+  
   @IBOutlet weak var table: UITableView!
   
   let searchController = UISearchController(searchResultsController: nil)
   private var searchViewModel = SearchViewModel.init(cells: [])
   private var timer: Timer?
+  
   private lazy var footerView = FooterView()
   weak var tabBarDelegate: MainTabBarControllerDelegate?
-
+  
   // MARK: Setup
   
   private func setup() {
@@ -39,11 +41,13 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     router.viewController     = viewController
   }
   
+  
   // MARK: View lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
+    
     setupTableView()
     setupSearchBar()
   }
@@ -57,14 +61,17 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
   
   private func setupTableView() {
     table.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
-    table.tableFooterView = footerView
+    
     let nib = UINib(nibName: "TrackCell", bundle: nil)
     table.register(nib, forCellReuseIdentifier: TrackCell.reuseId)
+    table.tableFooterView = footerView
   }
   
   func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
+    
     switch viewModel {
     case .displayTracks(let searchViewModel):
+      print("viewController .displayTracks")
       self.searchViewModel = searchViewModel
       table.reloadData()
       footerView.hideLoader()
@@ -75,9 +82,10 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
   
 }
 
-// MARK: -
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return searchViewModel.cells.count
   }
@@ -86,11 +94,16 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     let cell = table.dequeueReusableCell(withIdentifier: TrackCell.reuseId, for: indexPath) as! TrackCell
     
     let cellViewModel = searchViewModel.cells[indexPath.row]
-    cell.trackImageView.backgroundColor = .gray
-    
+    //        print("cellViewModel.previewUrl:", cellViewModel.previewUrl)
+    cell.trackImageView.backgroundColor = .red
     cell.set(viewModel: cellViewModel)
     
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let cellViewModel = searchViewModel.cells[indexPath.row]
+    self.tabBarDelegate?.maximizeTrackDetailController(viewModel: cellViewModel)
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -99,51 +112,33 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = UILabel()
-    label.text = "This search is empty 🤷"
+    label.text = "Search is empty "
     label.textAlignment = .center
     label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
     return label
   }
   
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let cellViewModel = searchViewModel.cells[indexPath.row]
-    
-    tabBarDelegate?.maximizeTrackDetailController(viewModel: cellViewModel)
-    
-//    let keyWindow = UIApplication.shared.connectedScenes
-//      .filter({$0.activationState == .foregroundActive})
-//      .map({$0 as? UIWindowScene})
-//      .compactMap({$0})
-//      .first?.windows
-//      .filter({$0.isKeyWindow}).first
-//    let window = keyWindow
-//    let trackDetailsView: TrackDetailView = TrackDetailView.loadFromNib()
-//    trackDetailsView.delegate = self
-//    trackDetailsView.set(viewModel: cellViewModel)
-//    window?.addSubview(trackDetailsView)
-  }
-  
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return searchViewModel.cells.count > 0 ? 0 : 40
-    
+    return searchViewModel.cells.count > 0 ? 0 : 250
   }
 }
 
+// MARK: - UISearchBarDelegate
 
 extension SearchViewController: UISearchBarDelegate {
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    
     timer?.invalidate()
     timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
-      self.interactor?.makeRequest(request: .getTracks(searchText: searchText))
+      self.interactor?.makeRequest(request: Search.Model.Request.RequestType.getTracks(searchText: searchText))
     })
+    
   }
 }
 
-
 extension SearchViewController: TrackMovingDelegate {
-  
-  private func getTrack(isForwardTrack: Bool) ->SearchViewModel.Cell? {
-    guard let indexPath = table.indexPathForSelectedRow else {return nil}
+  private func getTrack(isForwardTrack: Bool) -> SearchViewModel.Cell? {
+    guard let indexPath = table.indexPathForSelectedRow else { return nil }
     table.deselectRow(at: indexPath, animated: true)
     var nextIndexPath: IndexPath!
     if isForwardTrack {
@@ -152,7 +147,7 @@ extension SearchViewController: TrackMovingDelegate {
         nextIndexPath.row = 0
       }
     } else {
-      nextIndexPath = IndexPath.init(row: indexPath.row - 1, section: indexPath.section)
+      nextIndexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
       if nextIndexPath.row == -1 {
         nextIndexPath.row = searchViewModel.cells.count - 1
       }
@@ -161,7 +156,6 @@ extension SearchViewController: TrackMovingDelegate {
     table.selectRow(at: nextIndexPath, animated: true, scrollPosition: .none)
     let cellViewModel = searchViewModel.cells[nextIndexPath.row]
     return cellViewModel
-    
   }
   
   func moveBackForPreviousTrack() -> SearchViewModel.Cell? {
