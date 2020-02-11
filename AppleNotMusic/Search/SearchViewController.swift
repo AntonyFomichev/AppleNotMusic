@@ -112,14 +112,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = UILabel()
-    label.text = "Search is empty "
+    label.text = "Search is empty 🤷"
     label.textAlignment = .center
     label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
     return label
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return searchViewModel.cells.count > 0 ? 0 : 250
+    return searchViewModel.cells.count > 0 ? 0 : 55
   }
 }
 
