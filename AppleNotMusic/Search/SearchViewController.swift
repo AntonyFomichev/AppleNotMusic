@@ -23,6 +23,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
   private var searchViewModel = SearchViewModel.init(cells: [])
   private var timer: Timer?
   private lazy var footerView = FooterView()
+  weak var tabBarDelegate: MainTabBarControllerDelegate?
 
   // MARK: Setup
   
@@ -106,17 +107,20 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let cellViewModel = searchViewModel.cells[indexPath.row]
-    let keyWindow = UIApplication.shared.connectedScenes
-      .filter({$0.activationState == .foregroundActive})
-      .map({$0 as? UIWindowScene})
-      .compactMap({$0})
-      .first?.windows
-      .filter({$0.isKeyWindow}).first
-    let window = keyWindow
-    let trackDetailsView: TrackDetailView = TrackDetailView.loadFromNib()
-    trackDetailsView.delegate = self
-    trackDetailsView.set(viewModel: cellViewModel)
-    window?.addSubview(trackDetailsView)
+    
+    tabBarDelegate?.maximizeTrackDetailController(viewModel: cellViewModel)
+    
+//    let keyWindow = UIApplication.shared.connectedScenes
+//      .filter({$0.activationState == .foregroundActive})
+//      .map({$0 as? UIWindowScene})
+//      .compactMap({$0})
+//      .first?.windows
+//      .filter({$0.isKeyWindow}).first
+//    let window = keyWindow
+//    let trackDetailsView: TrackDetailView = TrackDetailView.loadFromNib()
+//    trackDetailsView.delegate = self
+//    trackDetailsView.set(viewModel: cellViewModel)
+//    window?.addSubview(trackDetailsView)
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
