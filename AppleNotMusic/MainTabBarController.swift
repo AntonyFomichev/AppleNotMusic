@@ -26,7 +26,7 @@ class MainTabBarController: UITabBarController {
     super.viewDidLoad()
     
     view.backgroundColor = .systemBackground
-    tabBar.tintColor = #colorLiteral(red: 1, green: 0, blue: 0.3776089847, alpha: 1)
+    view.tintColor = #colorLiteral(red: 1, green: 0, blue: 0.3776089847, alpha: 1)
     
     setupTrackDetailView()
     searchVC.tabBarDelegate = self
@@ -67,9 +67,9 @@ class MainTabBarController: UITabBarController {
 extension MainTabBarController: MainTabBarControllerDelegate {
   
   func maximizeTrackDetailController(viewModel: SearchViewModel.Cell?) {
-    
-    maximizedTopAnchorConstraint.isActive = true
     minimizedTopAnchorConstraint.isActive = false
+    maximizedTopAnchorConstraint.isActive = true
+    
     maximizedTopAnchorConstraint.constant = 0
     bottomAnchorConstraint.constant = 0
     

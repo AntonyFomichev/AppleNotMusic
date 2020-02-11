@@ -95,7 +95,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     let cellViewModel = searchViewModel.cells[indexPath.row]
     //        print("cellViewModel.previewUrl:", cellViewModel.previewUrl)
-    cell.trackImageView.backgroundColor = .red
+    cell.trackImageView.backgroundColor = .gray
     cell.set(viewModel: cellViewModel)
     
     return cell

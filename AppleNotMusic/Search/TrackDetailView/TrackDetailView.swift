@@ -73,6 +73,7 @@ class TrackDetailView:UIView {
   private func setupGestures() {
     miniTrackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleMaximized)))
     miniTrackView.addGestureRecognizer(UIPanGestureRecognizer(target:self, action: #selector(handlePan)))
+    addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleDismissalPan)))
   }
   
   @objc private func handleMaximized() {
@@ -97,6 +98,33 @@ class TrackDetailView:UIView {
       
     @unknown default:
       print("unknown")
+    }
+  }
+  
+  
+  @objc private func handleDismissalPan(gesture: UIPanGestureRecognizer) {
+    switch gesture.state {
+    case .possible:
+           print("")
+    case .began:
+           print("")
+    case .changed:
+      let translation = gesture.translation(in: self.superview)
+      maximizedStackView.transform = CGAffineTransform(translationX: 0, y: translation.y)
+    case .ended:
+      let translation = gesture.translation(in: self.superview)
+      UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+        self.maximizedStackView.transform = .identity
+        if translation.y > 50 {
+          self.tabBarDelegate?.minimizeTrackDetailController()
+        }
+      }, completion: nil)
+    case .cancelled:
+           print("")
+    case .failed:
+           print("")
+    @unknown default:
+      print("")
     }
   }
   
@@ -216,5 +244,4 @@ class TrackDetailView:UIView {
       reduceImageView()
     }
   }
-  
 }
