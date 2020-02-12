@@ -46,7 +46,7 @@
                         <color key="tintColor" red="0.90980392160000001" green="0.27058823529999998" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" image="Add"/>
                         <connections>
-                            <action selector="addTrackAction:" destination="iMV-MQ-3Qy" eventType="touchUpInside" id="Z2w-61-rLv"/>
+                            <action selector="addTrackAction:" destination="iMV-MQ-3Qy" eventType="touchUpInside" id="PWU-1p-WRZ"/>
                         </connections>
                     </button>
                 </subviews>

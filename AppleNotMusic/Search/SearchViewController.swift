@@ -151,7 +151,7 @@ extension SearchViewController: TrackMovingDelegate {
         nextIndexPath.row = searchViewModel.cells.count - 1
       }
     }
-    
+
     table.selectRow(at: nextIndexPath, animated: true, scrollPosition: .none)
     let cellViewModel = searchViewModel.cells[nextIndexPath.row]
     return cellViewModel

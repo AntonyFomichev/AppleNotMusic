@@ -185,10 +185,6 @@ class TrackDetailView:UIView {
     let durationSeconds = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
     let percentage = currentTimeSeconds / durationSeconds
     self.currentTimeSlider.value = Float(percentage)
-    
-    if durationSeconds == currentTimeSeconds {
-      moveNextTrack()
-    }
   }
   
   private func enlargeImageView() {
