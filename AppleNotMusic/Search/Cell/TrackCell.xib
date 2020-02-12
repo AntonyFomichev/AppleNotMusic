@@ -53,6 +53,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="artistNameLabel" destination="l3q-ME-mW0" id="dfc-H5-geN"/>
+                <outlet property="buttonAddTrack" destination="2aD-hn-z7j" id="JHJ-t8-49Q"/>
                 <outlet property="collectionNameLabel" destination="Qff-kR-RQH" id="ThS-c8-9UF"/>
                 <outlet property="trackImageView" destination="lSC-2l-dN4" id="Swe-yQ-4by"/>
                 <outlet property="trackNameLabel" destination="Ysf-xb-DaZ" id="dp6-eh-4vL"/>

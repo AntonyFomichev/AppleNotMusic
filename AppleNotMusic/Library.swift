@@ -7,8 +7,11 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct Library: View {
+  var tracks = UserDefaults.standard.getSavedTracks()
+  
   var body: some View {
     NavigationView {
       VStack {
@@ -18,18 +21,20 @@ struct Library: View {
               print("54321")
             },
                    label: {
-                    Image(systemName: "play.fill").frame(width: geometry.size.width / 2 - 10, height: 50).background(Color(.tertiarySystemGroupedBackground)).cornerRadius(10)          })
+                    Image(systemName: "play.fill").frame(width: geometry.size.width / 2 - 10, height: 50.0).background(Color(.tertiarySystemGroupedBackground)).cornerRadius(10.0)
+                    
+            })
             Button(action: {
-              print("54321")
+              print("543321")
             },
                    label: {
-                    Image(systemName: "arrow.2.circlepath").frame(width: geometry.size.width / 2 - 10, height: 50).background(Color(.tertiarySystemGroupedBackground)).cornerRadius(10)
+                    Image(systemName: "arrow.2.circlepath").frame(width: geometry.size.width / 2 - 10, height: 50.0).background(Color(.tertiarySystemGroupedBackground)).cornerRadius(10.0)
             })
           }
-        }.padding().frame(height: 50)
+        }.padding().frame(height: 50.0)
         Divider().padding(.leading).padding(.trailing)
-        List {
-          LibraryCell()
+        List(tracks) { track in
+          LibraryCell(cell: track)
         }
       }
       .navigationBarTitle("Library")
@@ -39,12 +44,16 @@ struct Library: View {
 }
 
 struct LibraryCell: View {
+  var cell: SearchViewModel.Cell
   var body: some View {
     HStack {
-      Image("1").resizable().frame(width: 60, height: 60).cornerRadius(4)
-      VStack {
-        Text("Fangirl")
-        Text("Lil Peep")
+      URLImage(URL(string: cell.iconUrlString ?? "")!, content: {
+        $0.image
+          .resizable().frame(width: 60.0, height: 60.0).cornerRadius(2)
+      })
+      VStack(alignment: .leading) {
+        Text("\(cell.trackName ?? "")")
+        Text("\(cell.artistName)")
       }
     }
   }

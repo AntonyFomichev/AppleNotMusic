@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,8 @@
 		3A778D6723EF5C8600AEF8FC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */; };
 		3A83142623F08DF9009F0FFD /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A83142523F08DF9009F0FFD /* TrackCell.xib */; };
 		3A83142823F08E1E009F0FFD /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83142723F08E1E009F0FFD /* TrackCell.swift */; };
+		3AA0673223F46C67000A033D /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0673123F46C67000A033D /* UserDefaults.swift */; };
+		3AA0673523F49270000A033D /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3AA0673423F49270000A033D /* URLImage */; };
 		3AB8434823F197EC00143620 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8434723F197EC00143620 /* Nib.swift */; };
 		3AB8434A23F3054700143620 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB8434923F3054700143620 /* Library.swift */; };
 		3AE934B723F0B96800A7CA43 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE934B623F0B96800A7CA43 /* FooterView.swift */; };
@@ -58,6 +60,7 @@
 		3A778D6623EF5C8600AEF8FC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3A83142523F08DF9009F0FFD /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		3A83142723F08E1E009F0FFD /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		3AA0673123F46C67000A033D /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		3AB8434723F197EC00143620 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		3AB8434923F3054700143620 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		3AE934B623F0B96800A7CA43 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA0673523F49270000A033D /* URLImage in Frameworks */,
 				00363FA50620598483CCEEC1 /* libPods-AppleNotMusic.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +87,7 @@
 		3A59CB3223F05F23003B1CD7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				3AA0673023F46C52000A033D /* Store */,
 				3AE934B823F0C69F00A7CA43 /* TrackDetailView */,
 				3AE934B523F0B95000A7CA43 /* FooterView */,
 				3A83142423F08DD2009F0FFD /* Cell */,
@@ -162,6 +167,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		3AA0673023F46C52000A033D /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				3AA0673123F46C67000A033D /* UserDefaults.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		3AE934B523F0B95000A7CA43 /* FooterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +226,9 @@
 			dependencies = (
 			);
 			name = AppleNotMusic;
+			packageProductDependencies = (
+				3AA0673423F49270000A033D /* URLImage */,
+			);
 			productName = AppleNotMusic;
 			productReference = 3A778D4F23EF5BED00AEF8FC /* AppleNotMusic.app */;
 			productType = "com.apple.product-type.application";
@@ -241,6 +257,9 @@
 				Base,
 			);
 			mainGroup = 3A778D4623EF5BED00AEF8FC;
+			packageReferences = (
+				3AA0673323F49270000A033D /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 3A778D5023EF5BED00AEF8FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -312,6 +331,7 @@
 				3A59CB4B23F0601E003B1CD7 /* SearchRouter.swift in Sources */,
 				3A59CB4C23F0601E003B1CD7 /* SearchModels.swift in Sources */,
 				3AE934BE23F13A2600A7CA43 /* CMTimeExt.swift in Sources */,
+				3AA0673223F46C67000A033D /* UserDefaults.swift in Sources */,
 				3A778D5523EF5BED00AEF8FC /* SceneDelegate.swift in Sources */,
 				3A59CB4923F0601E003B1CD7 /* SearchPresenter.swift in Sources */,
 				3A4A4BE223F0576F0055757D /* NetworkService.swift in Sources */,
@@ -514,6 +534,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3AA0673323F49270000A033D /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3AA0673423F49270000A033D /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AA0673323F49270000A033D /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A778D4723EF5BED00AEF8FC /* Project object */;
 }

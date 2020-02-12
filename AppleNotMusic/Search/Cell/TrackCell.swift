@@ -26,6 +26,8 @@ class TrackCell: UITableViewCell {
   @IBOutlet weak var artistNameLabel: UILabel!
   @IBOutlet weak var collectionNameLabel: UILabel!
   
+  @IBOutlet weak var buttonAddTrack: UIButton!
+  
   override func awakeFromNib() {
     super.awakeFromNib()
   }
@@ -37,8 +39,23 @@ class TrackCell: UITableViewCell {
   
   var cell: SearchViewModel.Cell?
   
+  func isTrackAdded() -> Bool {
+    let savedTracks = UserDefaults.standard.getSavedTracks()
+    let isAdded = savedTracks.firstIndex(where: {
+      $0.trackName == self.cell?.trackName && $0.artistName == self.cell?.artistName
+    }) != nil
+    
+    return isAdded
+  }
+  
   func set(viewModel: SearchViewModel.Cell) {
     self.cell = viewModel
+    
+    if (isTrackAdded()) {
+      buttonAddTrack.isHidden = true
+    } else {
+      buttonAddTrack.isHidden = false
+    }
     
     trackNameLabel.text = viewModel.trackName
     artistNameLabel.text = viewModel.artistName
@@ -50,8 +67,15 @@ class TrackCell: UITableViewCell {
   
   @IBAction func addTrackAction(_ sender: Any) {
     let defaults = UserDefaults.standard
-    if let saveData = try? NSKeyedArchiver.archivedData(withRootObject: cell ?? {}, requiringSecureCoding: false) {
-      defaults.set(saveData, forKey: "tracks")
+    guard let cell = cell else { return }
+    
+    buttonAddTrack.isHidden = true
+    
+    var trackList = defaults.getSavedTracks()
+    trackList.append(cell)
+    
+    if let saveData = try? NSKeyedArchiver.archivedData(withRootObject: trackList, requiringSecureCoding: false) {
+      defaults.set(saveData, forKey: UserDefaults.favouriteTrackKey)
       print("Done!")
     }
   }

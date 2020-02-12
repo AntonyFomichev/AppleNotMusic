@@ -41,7 +41,7 @@ class SearchViewModel: NSObject, NSCoding {
     cells = coder.decodeObject(forKey: "cells") as? [SearchViewModel.Cell] ?? []
   }
   
-  @objc(_TtCC13AppleNotMusic15SearchViewModel4Cell)class Cell: NSObject, NSCoding {
+  @objc(_TtCC13AppleNotMusic15SearchViewModel4Cell)class Cell: NSObject, NSCoding, Identifiable {
     func encode(with coder: NSCoder) {
       coder.encode(iconUrlString, forKey: "iconUrlString")
       coder.encode(trackName, forKey: "trackName")
@@ -58,6 +58,7 @@ class SearchViewModel: NSObject, NSCoding {
       previewUrl = coder.decodeObject(forKey: "previewUrl") as? String? ?? ""
     }
     
+    var id = UUID()
     var iconUrlString: String?
     var trackName: String?
     var collectionName: String
