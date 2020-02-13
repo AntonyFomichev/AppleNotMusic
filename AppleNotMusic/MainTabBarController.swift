@@ -30,9 +30,9 @@ class MainTabBarController: UITabBarController {
     
     setupTrackDetailView()
     searchVC.tabBarDelegate = self
-    
     var library = Library()
     library.tabBarDelegate = self
+  
     let hostVC = UIHostingController(rootView: library)
     hostVC.tabBarItem.image = #imageLiteral(resourceName: "library")
     hostVC.tabBarItem.title = "Library"

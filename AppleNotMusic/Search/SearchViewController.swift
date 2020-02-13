@@ -52,6 +52,19 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     setupSearchBar()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    let keyWindow = UIApplication.shared.connectedScenes.filter({
+      $0.activationState == .foregroundActive
+    }).map({$0 as? UIWindowScene}).compactMap({
+      $0
+    }).first?.windows.filter({$0.isKeyWindow}).first
+    
+    let tabBarVC = keyWindow?.rootViewController as? MainTabBarController
+    tabBarVC?.trackDetailView.delegate = self
+  }
+  
   private func setupSearchBar() {
     navigationItem.searchController = searchController
     navigationItem.hidesSearchBarWhenScrolling = false
@@ -151,7 +164,7 @@ extension SearchViewController: TrackMovingDelegate {
         nextIndexPath.row = searchViewModel.cells.count - 1
       }
     }
-
+    
     table.selectRow(at: nextIndexPath, animated: true, scrollPosition: .none)
     let cellViewModel = searchViewModel.cells[nextIndexPath.row]
     return cellViewModel
